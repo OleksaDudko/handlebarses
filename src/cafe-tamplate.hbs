@@ -1,5 +1,10 @@
 {{#each cafe}}
     <li class="item">
+        {{#if img}}
+        <img src="{{img}}" alt="{{name}}">
+        {{else}}
+        <img src="https://miro.medium.com/1*MXyMqcEJ6Se0SCWcYCKZTQ.jpeg" alt="error">
+        {{/if}}
         <h2>Назва: {{name}}</h2>
         <p>Тип зерна: {{type}}</p>
         <p>Походження: {{origin_country}}</p>
@@ -9,5 +14,11 @@
         {{/each}}
         </ul>
         <p>Ціна за 100 грам: {{price_per_100g}}</p>
+        <p>{{details.roast_level}}</p>
+        {{#if details.in_stock}}
+        <p>В наявності</p>
+        {{else}}
+        <p>Нема в наявності</p>
+        {{/if}}
     </li>
 {{/each}}
